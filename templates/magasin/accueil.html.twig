@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% include 'header.html.twig' %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    {% for unProduit in lesProduits %}
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <img class="card-img-top" alt="Bootstrap Thumbnail First" src="{{ unProduit.image }}" />
+                            <div class="caption">
+                                <h4>{{ unProduit.descriptif }}</h4>
+                                <p>{{ unProduit.prix }}€</p>
+                                <a class="btn btn-primary" href="produit.php">Plus d'infos</a>
+                                <a class="btn btn-success" href="panier.php">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>    
+                    {% endfor %}
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html.twig' %}
+{% endblock body %}

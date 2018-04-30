@@ -1,0 +1,59 @@
+easy_admin:
+    design:
+        form_theme: 'horizontal'
+        
+        menu:
+            - label: 'Utilisateurs'
+            - {entity: 'User', icon: 'users'}
+            
+            - label: 'Produits'
+            - {entity: 'Produits', icon: "thumbs-o-up"}
+            
+            - label: 'Liens internes'
+            - {label: 'Notre site',route: "home", icon: "calendar"}
+    entities:
+#        # List the entity class name you want to manage 
+        User:
+            class: App\Entity\User
+            list:
+                title: "Liste des utilisateurs"
+                fields:
+                    - {property: 'user_name',type: 'text'}
+                    - {property: 'password'}
+                    - {property: 'is_active',type: 'toggle'}
+                    - {property: 'role'}
+                    - {property: 'email',type: 'email'}
+                    
+            form:
+                title: "Ajout d'un utilisateur"
+                fields:
+                    - {property: 'user_name',type: 'text'}
+                    - {property: 'password'}
+                    - {property: 'is_active',type: 'checkbox'}
+                    - {property: 'role', type: 'choice', type_options:
+                            {choices: {'Utilisateur':'ROLE_USER', 'Admin':'ROLE_ADMIN'}}}
+                    - {property: 'email',type: 'email'}
+                    
+        Produits:
+            class: App\Entity\Produits
+            list:
+                title: "Liste des produits"
+                fields:
+                    - {property: 'nom',type: 'text'}
+                    - {property: 'descriptif',type: 'text'}
+                    - {property: 'en_vente',type: 'toggle'}
+                    - {property: 'image',type: 'image' }
+                    - {property: 'stock'}
+                    - {property: 'prix'}
+            
+            
+            form:
+                title: "Ajout d'un produit"
+                fields:
+                    - {property: 'nom',type: 'text'}
+                    - {property: 'descriptif',type: 'text'}
+                    - {property: 'en_vente',type: 'checkbox'}
+                    - {property: 'image'}
+                    - {property: 'stock'}
+                    - {property: 'prix'}
+                            
