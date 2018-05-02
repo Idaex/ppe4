@@ -9,6 +9,7 @@
                     {% for unProduit in lesProduits %}
                     <div class="col-md-4">
                         <div class="thumbnail">
+                            <center><p>{{ unProduit.nom }}</p></center>
                             <img class="card-img-top" alt="Bootstrap Thumbnail First" src="{{ unProduit.image }}" />
                             <div class="caption">
                                 <h4>{{ unProduit.descriptif }}</h4>

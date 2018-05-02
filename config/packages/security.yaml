@@ -30,5 +30,5 @@ security:
         ROLE_ADMIN: ROLE_USER                     #deux roles pris en compte, admin > user
         
     access_control:                               #contrôle d'accès
-      - { path: ^/perso, roles: ROLE_ADMIN}
+      - { path: ^/admin, roles: ROLE_ADMIN}
       - { path: ^/visiteur, roles: ROLE_USER}
